@@ -75,10 +75,17 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+      <!-- index -->
+      <script src="components/index/app.js"></script>
+      <script src="components/index/routes.js"></script>
+      <script src="components/index/appController.js"></script>
+      <script src="components/index/authenticationService.js"></script>
+      <!-- end app base -->
+
+      <!-- user/login -->
+      <script src="components/user/login/loginController.js"></script>
+      <!-- end user/login -->
 </body>
 </html>

@@ -19,7 +19,7 @@ var yeoman = {
 
 // for sources
 var paths = {
-  scripts: [yeoman.app + '/scripts/**/*.js'],
+  scripts: [yeoman.app + '/components/**/*.js'],
   styles: [yeoman.app + '/styles/**/*.scss'],
   test: ['test/spec/**/*.js'],
   testRequire: [
@@ -40,7 +40,7 @@ var paths = {
   views: {
     main: yeoman.app + '/index.html',
     bowermain: yeoman.temp + '/index.html',
-    files: [yeoman.app + '/views/**/*.html']
+    files: [yeoman.app + '/**/*.html']
   }
 };
 
