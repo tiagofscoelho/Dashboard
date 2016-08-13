@@ -15,22 +15,21 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+  .config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
+  function($stateProvider, $locationProvider, $urlRouterProvider) {
+
+
+ $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise("/404");
+
+// Now set up the states
+    $stateProvider
+      .state('root', {
+        url: "/",
+        templateUrl: "views/index.html"
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    }
+  ]);
