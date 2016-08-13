@@ -111,23 +111,9 @@ gulp.task('start:server:test', function() {
 });
 
 gulp.task('watch', function () {
-  $.watch(paths.styles)
-    .pipe($.plumber())
-    .pipe(styles())
-    .pipe($.connect.reload())
-
-  $.watch(paths.views.files)
-    .pipe($.plumber())
-    .pipe($.connect.reload())
-
-  $.watch(paths.scripts)
-    .pipe($.plumber())
-    .pipe(lintScripts())
-    .pipe($.connect.reload())
-
-  $.watch(paths.test)
-    .pipe($.plumber())
-
+  gulp.watch([paths.views.files], ['html'])
+  gulp.watch([paths.styles], ['styles'])
+  gulp.watch([paths.scripts], ['lint:scripts'])
   gulp.watch('bower.json', ['bower']);
 });
 
