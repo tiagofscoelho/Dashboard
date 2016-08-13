@@ -14,5 +14,5 @@ angular
 applicationController.$inject = [];
 
 function applicationController(){
-	console.log("Olha eu aqui que lindo");
+	
 };

@@ -19,6 +19,6 @@ function($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider.state('root', {
     url: '/',
     controller: 'AppController'
-  })
+  });
 
 }]);
