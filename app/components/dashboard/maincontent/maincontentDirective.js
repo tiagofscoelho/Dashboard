@@ -9,10 +9,8 @@
  */
 angular
 .module('dashboardApp')
-.controller('AppController', applicationController);
-
-applicationController.$inject = [];
-
-function applicationController(){
-	
-};
+.directive('mainContent', function(){
+	return {
+ 		templateUrl: 'components/dashboard/maincontent/maincontentView.html'
+	}
+});
