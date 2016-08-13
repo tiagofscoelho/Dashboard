@@ -1,8 +1,9 @@
-#dashboard-wrapper{
-	
-}
-
 @import "components/dashboard/aside";
 @import "components/dashboard/topbar";
 @import "components/dashboard/maincontent";
 @import "components/dashboard/quickview";
+
+#tc-dashboard-wrapper{
+	width: 100%;
+	height: 100%;
+}

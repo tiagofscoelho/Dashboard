@@ -1,1 +1,12 @@
+@import "utils/reset";
 @import "components/dashboard/dashboard";
+
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+#tc-dashboard{
+	min-height: 100%;
+	position: relative;
+}
