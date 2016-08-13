@@ -8,6 +8,7 @@ var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var historyApiFallback = require('connect-history-api-fallback');
 
 //app directory structor
 var yeoman = {
@@ -90,8 +91,10 @@ gulp.task('start:server', function() {
     livereload:true,
     port: 9000,
     middleware:function(connect, opt){
-      return [['/bower_components', 
-        connect["static"]('./bower_components')]]
+      return [
+        ['/bower_components',  connect["static"]('./bower_components')],
+        historyApiFallback()
+      ]
     }
   });
 });
