@@ -2,13 +2,47 @@ aside{
 	position: absolute;
     top: 0;
     left: 0;
-    padding-top: 48px;
+    padding-top: $topbar-normal-height;
     min-height: 100%;
-    width: 256px;
-    background-color: red;
+    width: $aside-normal-width;
     -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
     -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
     -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
     transition: transform .3s ease-in-out,width .3s ease-in-out;
     z-index: 10;
+}
+
+@mixin asidePainting($theme, $colors) {
+
+  $dark-primary  	: 	map-get($colors, "dark-primary");
+  $light-primary 	: 	map-get($colors, "light-primary");
+  $primary	 		: 	map-get($colors, "primary");
+  $secondary  		: 	map-get($colors, "secondary");
+  $links 			: 	map-get($colors, "links");
+  $primary-text  	: 	map-get($colors, "primary-text");
+  $secondary-text  	: 	map-get($colors, "secondary-text");
+  $dividers  		: 	map-get($colors, "dividers");
+
+  .#{$theme} {
+
+  	aside{
+
+   		background-color: $primary;
+  		
+  		.wrapper {
+	      background-color: $dark-primary;
+	      color: $light-primary;
+
+	      a{
+	      	color: $links;
+	      }
+
+	    }
+
+  	}
+  }
+}
+
+@each $theme, $colors in $themes-colors{
+	@include asidePainting($theme, $colors);
 }

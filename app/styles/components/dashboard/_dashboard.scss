@@ -1,3 +1,7 @@
+$aside-normal-width: 256px;
+$topbar-normal-height: 48px;
+$quickview-normal-width: 200px;
+
 @import "components/dashboard/aside";
 @import "components/dashboard/topbar";
 @import "components/dashboard/maincontent";

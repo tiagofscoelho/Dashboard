@@ -3,6 +3,41 @@ quick-view{
 	right: 0;
 	top: 0;
 	bottom: 0;
-	width: 200px;
+	width: $quickview-normal-width;
 	background-color: green;
+}
+
+@mixin quickViewPaiting($theme, $colors) {
+
+  $dark-primary  	: 	map-get($colors, "dark-primary");
+  $light-primary 	: 	map-get($colors, "light-primary");
+  $primary	 		: 	map-get($colors, "primary");
+  $secondary  		: 	map-get($colors, "secondary");
+  $links 			: 	map-get($colors, "links");
+  $primary-text  	: 	map-get($colors, "primary-text");
+  $secondary-text  	: 	map-get($colors, "secondary-text");
+  $dividers  		: 	map-get($colors, "dividers");
+
+  .#{$theme} {
+
+  	quick-view{
+
+   		background-color: $light-primary;
+  		
+  		.wrapper {
+	      background-color: $light-primary;
+	      color: $light-primary;
+
+	      a{
+	      	color: $links;
+	      }
+
+	    }
+
+  	}
+  }
+}
+
+@each $theme, $colors in $themes-colors{
+	@include quickViewPaiting($theme, $colors);
 }

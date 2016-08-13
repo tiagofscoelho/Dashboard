@@ -5,9 +5,44 @@ main-content{
     transition: transform .3s ease-in-out,margin .3s ease-in-out;
     background-color: blue;
     position: absolute;
-    top: 48px;
+    top: $topbar-normal-height;
     bottom: 0;
-    left: 256px;
+    left: $aside-normal-width;
     right: 0;
-    padding-right: 200px;
+    padding-right: $quickview-normal-width;
+}
+
+@mixin maincontentPaiting($theme, $colors) {
+
+  $dark-primary     :   map-get($colors, "dark-primary");
+  $light-primary    :   map-get($colors, "light-primary");
+  $primary          :   map-get($colors, "primary");
+  $secondary        :   map-get($colors, "secondary");
+  $links            :   map-get($colors, "links");
+  $primary-text     :   map-get($colors, "primary-text");
+  $secondary-text   :   map-get($colors, "secondary-text");
+  $dividers         :   map-get($colors, "dividers");
+
+  .#{$theme} {
+
+    main-content{
+
+        background-color: $secondary;
+        
+        .wrapper {
+          background-color: $dark-primary;
+          color: $light-primary;
+
+          a{
+            color: $links;
+          }
+
+        }
+
+    }
+  }
+}
+
+@each $theme, $colors in $themes-colors{
+    @include maincontentPaiting($theme, $colors);
 }

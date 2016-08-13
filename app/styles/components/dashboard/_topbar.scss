@@ -1,7 +1,41 @@
 top-bar{
 	position: relative;
-    min-height: 48px;
+    min-height: $topbar-normal-height;
     display: block;
-    background-color: yellow;
     z-index: 20;
+}
+
+@mixin topbarPainting($theme, $colors) {
+
+  $dark-primary  	: 	map-get($colors, "dark-primary");
+  $light-primary 	: 	map-get($colors, "light-primary");
+  $primary	 		: 	map-get($colors, "primary");
+  $secondary  		: 	map-get($colors, "secondary");
+  $links 			: 	map-get($colors, "links");
+  $primary-text  	: 	map-get($colors, "primary-text");
+  $secondary-text  	: 	map-get($colors, "secondary-text");
+  $dividers  		: 	map-get($colors, "dividers");
+
+  .#{$theme} {
+
+  	top-bar{
+
+   		background-color: $dark-primary;
+  		
+  		.wrapper {
+	      background-color: $dark-primary;
+	      color: $light-primary;
+
+	      a{
+	      	color: $links;
+	      }
+
+	    }
+
+  	}
+  }
+}
+
+@each $theme, $colors in $themes-colors{
+	@include topbarPainting($theme, $colors);
 }
