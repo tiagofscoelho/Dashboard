@@ -11,8 +11,15 @@ angular
 .module('dashboardApp')
 .controller('DashboardController', dashboardController);
 
-dashboardController.$inject = [];
+dashboardController.$inject = ["$rootScope"];
 
-function dashboardController(){
+function dashboardController($rootScope){
+
+	$rootScope.dashboard = {
+		theme : "dark-blue",
+		lang  : "EN"
+	};
+
+
 	console.log("dashboardController");
 };

@@ -10,6 +10,38 @@ aside{
     -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
     transition: transform .3s ease-in-out,width .3s ease-in-out;
     z-index: 10;
+
+    ul{
+    	list-style-type: none;
+
+    	li{
+    		border-bottom: 1px solid red;
+		    padding: 5px;
+		    list-style-type: none;
+
+		    i.icon{
+		    	float: left;
+		    	margin-top: 2px;
+		    }
+
+		    .name{
+		    	padding-left: 26px;
+		    }
+
+		    .li-arrow{	
+			    float: right;
+			    margin-left: 5px;
+		    }
+
+		    .li-badge{
+		    	float: right;
+			    background-color: red;
+			    border-radius: 28%;
+			    padding: 0 5px;
+			    color: #fff;
+		    }
+    	}
+    }
 }
 
 @mixin asidePainting($theme, $colors) {
@@ -29,16 +61,11 @@ aside{
 
    		background-color: $primary;
   		
-  		.wrapper {
-	      background-color: $dark-primary;
-	      color: $light-primary;
-
-	      a{
-	      	color: $links;
-	      }
-
+  		ul{
+	    	li{
+	    		border-bottom: 1px solid $dividers;
+	    	}
 	    }
-
   	}
   }
 }
