@@ -17,6 +17,7 @@ function asideController($scope){
 	console.log("asideController");
 
 	$scope.aside = {
+		theme : "aside-dark",
 		list : 
 		[
 			{

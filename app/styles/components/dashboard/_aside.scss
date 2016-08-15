@@ -15,7 +15,6 @@ aside{
     	list-style-type: none;
 
     	li{
-    		border-bottom: 1px solid red;
 		    padding: 5px;
 		    list-style-type: none;
 
@@ -46,30 +45,37 @@ aside{
 
 @mixin asidePainting($theme, $colors) {
 
-  $dark-primary  	: 	map-get($colors, "dark-primary");
-  $light-primary 	: 	map-get($colors, "light-primary");
-  $primary	 		: 	map-get($colors, "primary");
-  $secondary  		: 	map-get($colors, "secondary");
-  $links 			: 	map-get($colors, "links");
-  $primary-text  	: 	map-get($colors, "primary-text");
-  $secondary-text  	: 	map-get($colors, "secondary-text");
-  $dividers  		: 	map-get($colors, "dividers");
+  $bg  			: 		map-get($colors, "bg");
+  $color		: 		map-get($colors, "color");
+  $hover-bg		: 		map-get($colors, "hover-bg");
+  $hover-color	: 		map-get($colors, "hover-color");
+ 
 
   .#{$theme} {
 
-  	aside{
+	background-color: $bg;
+		
+	ul{
+    	li{
 
-   		background-color: $primary;
-  		
-  		ul{
-	    	li{
-	    		border-bottom: 1px solid $dividers;
-	    	}
-	    }
-  	}
+    		&:hover{
+    			background-color: $hover-bg;
+    			color: $hover-color;
+    			cursor: pointer;
+    		}
+
+    		.name{
+    			color: $color;
+    		}
+    	}
+    }
+
+    .fa{
+		color: $color;
+    }
   }
 }
 
-@each $theme, $colors in $themes-colors{
+@each $theme, $colors in $aside-colors{
 	@include asidePainting($theme, $colors);
 }
