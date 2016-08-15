@@ -1,23 +1,29 @@
 <ul>
-	<li ng-repeat="element in aside.list">
-		<a>
+	<li class="no-select " ng-repeat="element in aside.list track by $index">
+		<a ng-click="elementClicked($index, element.is_opened)">
 			<i class="fa fa-lg {{element.icon}} icon" aria-hidden="true"></i> 
-			<div class="name">
+			<div class="name truncate">
 				{{element.name}}
 				<span class="li-arrow" ng-if="element.is_opened !== undefined">
 					<i class="fa fa-lg" 
 						ng-class="element.is_opened ? 'fa-angle-up' : 'fa-angle-down'" 
 						aria-hidden="true"></i>
 				</span>
-				<span class="li-badge" ng-if="element.badge.value > 0">
+				<span class="tc-badge {{element.badge.type}}" 
+						ng-if="element.badge && element.badge.value > 0">
 					{{element.badge.value}}
+				</span>
+				<span class="tc-badge {{element.label.type}}" 
+						ng-if="element.label && element.label.value.length > 0">
+					{{element.label.value}}
 				</span>
 			</div>
 		</a>
-		<ul ng-if="element.sub && element.is_opened">
-			<li ng-repeat="element in element.sub">
+		<ul class="animate-if" 
+			ng-if="element.sub && element.is_opened">
+			<li ng-repeat="element in element.sub track by $index">
 				<a>
-					<i class="fa fa-lg {{element.icon}}" aria-hidden="true"></i> 
+					<i class="fa {{element.icon}}" aria-hidden="true"></i> 
 					<div class="name">
 						{{element.name}}
 						{{element.is_opened}}

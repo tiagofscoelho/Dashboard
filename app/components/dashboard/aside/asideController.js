@@ -24,7 +24,7 @@ function asideController($scope){
 				name : "Level 1",
 				badge : {
 					value : 5,
-					type : "Warning"
+					type : "danger"
 				},
 				icon : "fa-tachometer",
 				is_opened : false,
@@ -33,7 +33,7 @@ function asideController($scope){
 						name : "Sub Level 1",
 						badge : {
 							value : 4,
-							type : "Success"
+							type : "danger"
 						},
 						icon : "fa-tachometer"
 					},
@@ -50,17 +50,13 @@ function asideController($scope){
 			{
 				name : "Level 2",
 				badge : {
-					value : 0,
-					type : "Warning"
+					value : 1,
+					type : "warning"
 				},
 				icon : "fa-tachometer"
 			},
 			{
 				name : "Level 3",
-				badge : {
-					value : 0,
-					type : "Warning"
-				},
 				icon : "fa-tachometer",
 				is_opened : true,
 				sub : {
@@ -79,6 +75,14 @@ function asideController($scope){
 							type : "info"
 						},
 						icon : "fa-tachometer"
+					},
+					3 : {
+						name : "Sub Level 3",
+						badge : {
+							value : 26,
+							type : "info"
+						},
+						icon : "fa-envira"
 					}
 				}
 			},
@@ -86,7 +90,7 @@ function asideController($scope){
 				name : "Level 4",
 				label : {
 					value : "New",
-					type : "default"
+					type : "info"
 				},
 				icon : "fa-tachometer"
 			},
@@ -94,10 +98,15 @@ function asideController($scope){
 				name : "Level 5",
 				badge : {
 					value : 1,
-					type : "Warning"
+					type : "success"
 				},
 				icon : "fa-tachometer"
 			}
 		]
+	}
+
+
+	$scope.elementClicked = function(index, hasSub){
+		if(hasSub !== undefined) $scope.aside.list[index].is_opened ^= true;
 	}
 };

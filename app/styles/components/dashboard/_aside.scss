@@ -21,6 +21,11 @@ aside{
 		    	padding: 10px;
 		    	display: block;
 
+		    	&:hover{
+	    			cursor: pointer;
+	    			text-decoration: none;
+		    	}
+
 		    	i.icon{
 			    	float: left;
 			    	margin-top: 2px;
@@ -30,19 +35,22 @@ aside{
 			    	padding-left: 26px;
 			    }
 
-			    .li-arrow{	
-				    float: right;
+			    .li-arrow{	    
+			    	position: absolute;
+			    	right: 8px;
 				    margin-left: 5px;   
 				    padding-top: 3px;
 			    }
+		    }
 
-			    .li-badge{
-			    	float: right;
-				    background-color: red;
-				    border-radius: 28%;
-				    padding: 0 5px;
-				    color: #fff;
-			    }
+		    ul {
+		    	padding-left: 10px;
+
+				li {
+					a{
+		    			font-size: 13px;
+		    		}
+		    	}
 		    }
     	}
     }
@@ -58,6 +66,11 @@ aside{
   $color		: 		map-get($colors, "color");
   $hover-bg		: 		map-get($colors, "hover-bg");
   $hover-color	: 		map-get($colors, "hover-color");
+  $sub-bg		: 		map-get($colors, "sub-bg");
+  $sub-color	: 		map-get($colors, "sub-color");
+  $sub-hover	: 		map-get($colors, "sub-hover");
+  $header-bg	: 		map-get($colors, "header-bg");
+  $header-color	: 		map-get($colors, "header-color");
  
 
   .#{$theme} {
@@ -68,13 +81,11 @@ aside{
     	li{
 
     		a{
-    			border-left: 2px solid transparent;
+    			border-left: 3px solid transparent;
 
 	    		&:hover{
 	    			background-color: $hover-bg;
 	    			color: $hover-color;
-	    			cursor: pointer;
-	    			text-decoration: none;
 
 	    			.name, .fa{
 	    				color: $hover-color;
@@ -83,6 +94,28 @@ aside{
 
 				.name{
     				color: $color;
+    			}
+    		}
+
+    		ul{
+    			background-color: $sub-bg;
+
+    			li{
+    				a{
+		    			border: none !important;
+
+			    		&:hover{
+			    			background: none !important;
+
+			    			.name, .fa{
+			    				color: $hover-color;
+			    			}
+			    		}
+
+						.name{
+		    				color: $sub-color;
+		    			}
+		    		}
     			}
     		}
     	}
@@ -108,7 +141,7 @@ aside{
 	.#{$theme} {
 		[class*="aside-"] {
 			ul li a:hover{
-		    	border-left: 2px solid $primary;
+		    	border-left: 3px solid $primary;
 		    }
 		  }
 	}

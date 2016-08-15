@@ -1,0 +1,35 @@
+.tc-badge{
+	position: absolute;
+    right: 26px;
+    border-radius: 10%;
+    padding: 0 5px;
+
+    &.float-left{
+    	float: left !important;
+    }
+
+    &.danger{
+    	color: #ffffff;
+	    background-color: #c9302c;
+    }
+
+    &.warning{
+    	color: #ffffff;
+	    background-color: #ec971f;
+    }
+
+    &.info{
+    	color: #ffffff;
+	    background-color: #31b0d5;
+    }
+
+    &.success{
+    	color: #ffffff;
+	    background-color: #449d44;
+    }
+
+    &.default{
+    	color: #2b3e50;    
+    	background-color: #B8C7CE;
+    }
+}

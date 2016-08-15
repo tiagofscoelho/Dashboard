@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
 @import "utils/reset";
+@import "utils/util-classes";
+
 @import "themes/colors";
+
+@import "ui-elements/badges";
+
 @import "components/dashboard/dashboard";
 
 html, body{
