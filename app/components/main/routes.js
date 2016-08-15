@@ -21,10 +21,35 @@ function($stateProvider, $locationProvider, $urlRouterProvider) {
 	    url: '/',
 	    controller: 'AppController'
 	  })
-	  .state('dashboard', {
-	  	url : '/dashboard',
-	  	controller : 'DashboardController',
-	  	templateUrl : 'components/dashboard/dashboardView.html'
+	  .state('home', {
+	  	url : '/home',
+  			controller : 'DashboardController',
+  			templateUrl : 'components/dashboard/dashboardView.html'
+	  })
+	  .state('home.chat', {
+	  	url : '/chat',
+  			controller : 'DashboardController',
+  			template : "<h1>Chat</h1>"
+	  })
+	  .state('home.mailbox', {
+	  	url : '/mailbox',
+  			controller : 'DashboardController',
+  			template : "<h1>Calendar</h1>"
+	  })
+	  .state('home.calendar', {
+	  	url : '/calendar',
+  			controller : 'DashboardController',
+  			template : "<h1>Calendar</h1>"
+	  })
+	  .state('home.todo', {
+	  	url : '/todo',
+  			controller : 'DashboardController',
+  			template : "<h1>Todo</h1>"
+	  })
+	  .state('home.notes', {
+	  	url : '/notes',
+  			controller : 'DashboardController',
+  			template : "<h1>Notes</h1>"
 	  });
 
 }]);

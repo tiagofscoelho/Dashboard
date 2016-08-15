@@ -1,6 +1,11 @@
 <ul>
-	<li class="no-select " ng-repeat="element in aside.list track by $index">
-		<a ng-click="elementClicked($index, element.is_opened)">
+	<li ng-repeat="element in aside.list track by $index">
+		<div class="divider" ng-if="element.type == 'dividir'">
+			{{element.value}}
+		</div>
+		<a class="no-select"
+			ng-if="element.type == 'navigation'" 
+			ng-click="elementClicked($index, element.is_opened)">
 			<i class="fa fa-lg {{element.icon}} icon" aria-hidden="true"></i> 
 			<div class="name truncate">
 				{{element.name}}
@@ -19,7 +24,7 @@
 				</span>
 			</div>
 		</a>
-		<ul class="animate-if" 
+		<ul class="no-select" 
 			ng-if="element.sub && element.is_opened">
 			<li ng-repeat="element in element.sub track by $index">
 				<a>

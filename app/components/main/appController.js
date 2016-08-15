@@ -20,5 +20,5 @@ function applicationController($state, $rootScope){
 		lang  : "EN"
 	};
 	
-	$state.go('dashboard');
+	$state.go('home');
 };

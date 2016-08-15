@@ -11,9 +11,9 @@ angular
 .module('dashboardApp')
 .controller('AsideController', asideController);
 
-asideController.$inject = ["$scope"];
+asideController.$inject = ["$scope", "$state"];
 
-function asideController($scope){
+function asideController($scope, $state){
 	console.log("asideController");
 
 	$scope.aside = {
@@ -21,10 +21,56 @@ function asideController($scope){
 		list : 
 		[
 			{
-				name : "Level 1",
+				type : "dividir",
+				value : "Main navigation"
+			},
+			{
+				type : "navigation",
+				name : "Dashboard",
+				icon : "fa-tachometer",
+				state : "home"
+			},
+			{
+				type : "navigation",
+				name : "Chat",
+				icon : "fa-comments-o",
+				state : "home.chat"
+			},
+			{
+				type : "navigation",
+				name : "Mailbox",
+				icon : "fa-envelope",
+				state : "home.mailbox"
+			},
+			{
+				type : "navigation",
+				name : "Calendar",
+				icon : "fa-calendar",
+				state : "home.calendar"
+			},
+			{
+				type : "navigation",
+				name : "To do",
+				icon : "fa-check",
+				state : "home.todo"
+			},
+			{
+				type : "navigation",
+				name : "Notes",
+				icon : "fa-sticky-note",
+				state : "home.notes"
+			}
+		/*
+			{
+				type : "dividir",
+				value : "UI Elements"
+			},
+			{
+				type : "navigation",
+				name : "Tables",
 				badge : {
-					value : 5,
-					type : "danger"
+					value : 2,
+					type : "info"
 				},
 				icon : "fa-tachometer",
 				is_opened : false,
@@ -101,12 +147,19 @@ function asideController($scope){
 					type : "success"
 				},
 				icon : "fa-tachometer"
-			}
+			}*/
 		]
 	}
 
 
 	$scope.elementClicked = function(index, hasSub){
-		if(hasSub !== undefined) $scope.aside.list[index].is_opened ^= true;
+
+		var elem = $scope.aside.list[index];
+
+		if(hasSub !== undefined) elem.is_opened ^= true;
+		else 
+		{
+			$state.go(elem.state);
+		}
 	}
 };

@@ -32,7 +32,8 @@ aside{
 			    }
 
 			    .name{
-			    	padding-left: 26px;
+			    	padding-left: 13px;
+			    	font-size: 14px;
 			    }
 
 			    .li-arrow{	    
@@ -49,8 +50,16 @@ aside{
 				li {
 					a{
 		    			font-size: 13px;
+
+		    			.name{
+		    				padding-left: 26px;
+		    			}
 		    		}
 		    	}
+		    }
+
+		    .divider{
+		    	padding: 10px 12px;
 		    }
     	}
     }
@@ -117,6 +126,11 @@ aside{
 		    			}
 		    		}
     			}
+    		}
+
+    		.divider{
+    			background-color: $header-bg;
+    			color: $header-color;
     		}
     	}
     }
