@@ -26,9 +26,13 @@
 					<i class="fa {{element.icon}}" aria-hidden="true"></i> 
 					<div class="name">
 						{{element.name}}
-						{{element.is_opened}}
-						<span ng-if="element.badge.value > 0">
+						<span class="tc-badge tc-badge-sm {{element.badge.type}}" 
+								ng-if="element.badge && element.badge.value > 0">
 							{{element.badge.value}}
+						</span>
+						<span class="tc-badge tc-badge-sm {{element.label.type}}" 
+								ng-if="element.label && element.label.value.length > 0">
+							{{element.label.value}}
 						</span>
 					</div>
 				</a>

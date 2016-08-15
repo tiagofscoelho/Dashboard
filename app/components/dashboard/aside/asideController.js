@@ -64,7 +64,7 @@ function asideController($scope){
 						name : "Sub Level 1",
 						badge : {
 							value : 4,
-							type : "Success"
+							type : "success"
 						},
 						icon : "fa-tachometer"
 					},
@@ -72,14 +72,14 @@ function asideController($scope){
 						name : "Sub Level 2",
 						badge : {
 							value : 5,
-							type : "info"
+							type : "danger"
 						},
 						icon : "fa-tachometer"
 					},
 					3 : {
 						name : "Sub Level 3",
 						badge : {
-							value : 26,
+							value : 0,
 							type : "info"
 						},
 						icon : "fa-envira"
