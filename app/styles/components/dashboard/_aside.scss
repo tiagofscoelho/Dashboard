@@ -15,31 +15,40 @@ aside{
     	list-style-type: none;
 
     	li{
-		    padding: 5px;
 		    list-style-type: none;
 
-		    i.icon{
-		    	float: left;
-		    	margin-top: 2px;
-		    }
+		    a{
+		    	padding: 10px;
+		    	display: block;
 
-		    .name{
-		    	padding-left: 26px;
-		    }
+		    	i.icon{
+			    	float: left;
+			    	margin-top: 2px;
+			    }
 
-		    .li-arrow{	
-			    float: right;
-			    margin-left: 5px;
-		    }
+			    .name{
+			    	padding-left: 26px;
+			    }
 
-		    .li-badge{
-		    	float: right;
-			    background-color: red;
-			    border-radius: 28%;
-			    padding: 0 5px;
-			    color: #fff;
+			    .li-arrow{	
+				    float: right;
+				    margin-left: 5px;   
+				    padding-top: 3px;
+			    }
+
+			    .li-badge{
+			    	float: right;
+				    background-color: red;
+				    border-radius: 28%;
+				    padding: 0 5px;
+				    color: #fff;
+			    }
 		    }
     	}
+    }
+
+    .fa{
+    	float: left;
     }
 }
 
@@ -58,14 +67,23 @@ aside{
 	ul{
     	li{
 
-    		&:hover{
-    			background-color: $hover-bg;
-    			color: $hover-color;
-    			cursor: pointer;
-    		}
+    		a{
+    			border-left: 2px solid transparent;
 
-    		.name{
-    			color: $color;
+	    		&:hover{
+	    			background-color: $hover-bg;
+	    			color: $hover-color;
+	    			cursor: pointer;
+	    			text-decoration: none;
+
+	    			.name, .fa{
+	    				color: $hover-color;
+	    			}
+	    		}
+
+				.name{
+    				color: $color;
+    			}
     		}
     	}
     }
@@ -76,6 +94,31 @@ aside{
   }
 }
 
+@mixin asidePaintingThemeBased($theme, $colors) {
+
+  $dark-primary     :   map-get($colors, "dark-primary");
+  $light-primary    :   map-get($colors, "light-primary");
+  $primary          :   map-get($colors, "primary");
+  $secondary        :   map-get($colors, "secondary");
+  $links            :   map-get($colors, "links");
+  $primary-text     :   map-get($colors, "primary-text");
+  $secondary-text   :   map-get($colors, "secondary-text");
+  $dividers         :   map-get($colors, "dividers");
+
+	.#{$theme} {
+		[class*="aside-"] {
+			ul li a:hover{
+		    	border-left: 2px solid $primary;
+		    }
+		  }
+	}
+ 
+}
+
 @each $theme, $colors in $aside-colors{
 	@include asidePainting($theme, $colors);
+}
+
+@each $theme, $colors in $themes-colors{
+	@include asidePaintingThemeBased($theme, $colors);
 }
