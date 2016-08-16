@@ -35,7 +35,7 @@ aside{
 		    	display: block;
 		    	min-height: 40px;
 
-		    	&:not(.divider):hover{
+		    	&:not(.divider):hover, &:not(.divider).active:hover{
 	    			cursor: pointer;
 	    			text-decoration: none;
 		    	}
@@ -106,7 +106,7 @@ aside{
     		a{
     			border-left: 3px solid transparent;
 
-	    		&:hover{
+	    		&:hover, &.active{
 	    			background-color: $hover-bg;
 	    			color: $hover-color;
 
@@ -168,7 +168,7 @@ aside{
 
 	.#{$theme} {
 		[class*="aside-"] {
-			ul li a:not(.divider):hover{
+			ul li a:not(.divider):hover, ul li a:not(.divider).active{
 		    	border-left: 3px solid $primary;
 		    }
 		  }

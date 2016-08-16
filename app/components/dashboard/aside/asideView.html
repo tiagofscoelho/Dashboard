@@ -8,7 +8,8 @@
 		</a>
 		<a class=" "
 			ng-if="element.type == 'navigation'" 
-			ng-click="elementClicked($index, element.is_opened)">
+			ng-click="elementClicked($index, element.is_opened)"
+			ng-class="{active: element.active}">
 			<i class="fa fa-lg {{element.icon}} icon" aria-hidden="true"></i> 
 			<div ng-if="dashboard.aside_opened" class="name truncate">
 				{{element.name}}

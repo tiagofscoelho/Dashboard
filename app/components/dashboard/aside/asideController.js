@@ -28,7 +28,8 @@ function asideController($scope, $state){
 				type : "navigation",
 				name : "Dashboard",
 				icon : "fa-tachometer",
-				state : "home"
+				state : "home",
+				active : true
 			},
 			{
 				type : "navigation",
@@ -159,6 +160,10 @@ function asideController($scope, $state){
 		if(hasSub !== undefined) elem.is_opened ^= true;
 		else 
 		{
+			for(var i = 0 ; i < $scope.aside.list.length; i++){
+				$scope.aside.list[i].active = false;
+			}
+			elem.active = true;
 			$state.go(elem.state);
 		}
 	}
