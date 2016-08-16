@@ -11,19 +11,37 @@ aside{
     transition: transform .3s ease-in-out,width .3s ease-in-out;
     z-index: 10;
 
+    &.short-size{
+    	width: $aside-short-width;
+
+    	.divider {
+    		span{
+    			display: none !important;
+    		}
+    	}
+    }
+
     ul{
     	list-style-type: none;
 
     	li{
 		    list-style-type: none;
+		    height: 40px;   
+		    white-space: nowrap;
+    		overflow: hidden;
 
 		    a{
 		    	padding: 10px;
 		    	display: block;
+		    	min-height: 40px;
 
-		    	&:hover{
+		    	&:not(.divider):hover{
 	    			cursor: pointer;
 	    			text-decoration: none;
+		    	}
+
+		    	&.divider:hover{
+		    		text-decoration: none;
 		    	}
 
 		    	i.icon{
@@ -32,7 +50,6 @@ aside{
 			    }
 
 			    .name{
-			    	padding-left: 13px;
 			    	font-size: 14px;
 			    }
 
@@ -57,15 +74,12 @@ aside{
 		    		}
 		    	}
 		    }
-
-		    .divider{
-		    	padding: 10px 12px;
-		    }
     	}
     }
 
     .fa{
     	float: left;
+    	padding-right: 13px;
     }
 }
 
@@ -154,7 +168,7 @@ aside{
 
 	.#{$theme} {
 		[class*="aside-"] {
-			ul li a:hover{
+			ul li a:not(.divider):hover{
 		    	border-left: 3px solid $primary;
 		    }
 		  }

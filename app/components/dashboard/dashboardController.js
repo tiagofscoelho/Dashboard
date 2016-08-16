@@ -17,9 +17,7 @@ function dashboardController($rootScope){
 
 	$rootScope.dashboard = {
 		theme : "dark-blue",
-		lang  : "EN"
+		lang  : "EN",
+		aside_opened : true
 	};
-
-
-	console.log("dashboardController");
 };

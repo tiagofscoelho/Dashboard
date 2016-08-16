@@ -4,11 +4,90 @@ top-bar{
     display: block;
     z-index: 20;
 
+
     .info{
       float: left;
       width: $aside-normal-width;
       height: $topbar-normal-height;
       background-color: rgba(0, 0, 0, 0.2);
+      -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
+      -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
+      -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
+      transition: transform .3s ease-in-out,width .3s ease-in-out;
+      overflow: hidden;
+      white-space: nowrap;
+
+      .logo{    
+        height: 48px;
+        padding-top: 12px;
+        display: inline-block;
+
+        .logo-shape-left:before, .logo-shape-left:after,
+        .logo-shape-right:before, .logo-shape-right:after,
+        .logo-shape-middle:before{
+          content: '';
+          display: inline-block;
+          height: 14px;
+          transform: rotate(-45deg);
+          vertical-align: middle;
+          width: 14px;
+          opacity: 0.9;
+          filter: alpha(opacity=90); /* For IE8 and earlier */
+        }
+
+        .logo-shape-left:before, .logo-shape-left:after{
+          margin: 8px;
+          margin-left: 15px;
+        }
+
+        .logo-shape-left:after {
+          margin-left: -10px;
+        }
+
+        .logo-shape-right:after {
+          margin-left: -2px;
+        }
+
+        .logo-shape-middle:before{
+          height: 22px;
+          width: 22px;
+          margin-left: -45px;
+        }
+      }
+
+      .name, .name-sm{
+        padding-top: 12px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        font-size: 16px;
+        display: inline-block;
+        }
+
+      .name-sm{
+        display: none;    
+        padding: 12px 0 0 4px;
+        letter-spacing: 0;
+      }
+    }
+
+    &.short-size{
+
+        .logo, .name{
+          display: none;
+        }
+
+        .name-sm{
+          display: inline-block;
+        }
+
+        .info{
+          width: $aside-short-width;
+      }
+    }
+
+    .hamburger{
+      padding: 17px 14px;
+      outline: 0;
     }
 }
 
@@ -26,19 +105,27 @@ top-bar{
   .#{$theme} {
 
   	top-bar{
-
    		background-color: $dark-primary;
+
+      .info{
+        .logo{
+
+          .logo-shape-left:before, .logo-shape-left:after,
+          .logo-shape-right:before, .logo-shape-right:after,
+          .logo-shape-middle:before{
+            background-color: $light-primary;
+          }
+        }
+
+        .name, .name-sm{
+          color: $light-primary;
+        }
   		
-  		.wrapper {
-	      background-color: $dark-primary;
-	      color: $light-primary;
-
-	      a{
-	      	color: $links;
-	      }
-
 	    }
 
+      .hamburger{
+        color: $secondary;  
+      }
   	}
   }
 }

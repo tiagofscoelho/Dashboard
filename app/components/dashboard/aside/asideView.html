@@ -1,13 +1,16 @@
 <ul>
 	<li ng-repeat="element in aside.list track by $index">
-		<div class="divider" ng-if="element.type == 'dividir'">
-			{{element.value}}
-		</div>
-		<a class="no-select"
+		<a class="truncate divider" ng-if="element.type == 'dividir'">
+			<i class="fa fa-lg fa-circle-o-notch icon" aria-hidden="true"></i>  
+			<div ng-if="dashboard.aside_opened" class="name truncate">
+				{{element.value}}
+			</div>
+		</a>
+		<a class=" "
 			ng-if="element.type == 'navigation'" 
 			ng-click="elementClicked($index, element.is_opened)">
 			<i class="fa fa-lg {{element.icon}} icon" aria-hidden="true"></i> 
-			<div class="name truncate">
+			<div ng-if="dashboard.aside_opened" class="name truncate">
 				{{element.name}}
 				<span class="li-arrow" ng-if="element.is_opened !== undefined">
 					<i class="fa fa-lg" 
@@ -29,7 +32,7 @@
 			<li ng-repeat="element in element.sub track by $index">
 				<a>
 					<i class="fa {{element.icon}}" aria-hidden="true"></i> 
-					<div class="name">
+					<div ng-if="aside.is_opened" class="name">
 						{{element.name}}
 						<span class="tc-badge tc-badge-sm {{element.badge.type}}" 
 								ng-if="element.badge && element.badge.value > 0">

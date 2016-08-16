@@ -17,7 +17,8 @@ function applicationController($state, $rootScope){
 
 	$rootScope.dashboard = {
 		theme : "dark-blue",
-		lang  : "EN"
+		lang  : "EN",
+		aside_opened : true
 	};
 	
 	$state.go('home');

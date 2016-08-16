@@ -24,4 +24,8 @@ function topbarController($scope, $rootScope){
 		var theme = themes[Math.floor(Math.random()*themes.length)];
 		$rootScope.dashboard.theme = theme;
 	}
+
+	$scope.toggleAside = function(){
+		$rootScope.dashboard.aside_opened ^= true;
+	}
 };
