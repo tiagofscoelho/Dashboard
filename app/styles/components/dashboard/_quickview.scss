@@ -4,7 +4,33 @@ quick-view{
 	top: 0;
 	bottom: 0;
 	width: $quickview-normal-width;
-	background-color: green;
+  -webkit-transition: -webkit-transform .3s ease-in-out,right .3s ease-in-out;
+  -moz-transition: -moz-transform .3s ease-in-out,right .3s ease-in-out;
+  -o-transition: -o-transform .3s ease-in-out,right .3s ease-in-out;
+  transition: transform .3s ease-in-out,right .3s ease-in-out;
+
+  .quick-view-btn{
+    position: absolute;
+    top: 0;
+    left: -38px;
+    padding: 10px;
+    border-radius: 0px 0px 0px 9px;
+    -moz-border-radius: 0px 0px 0px 9px;
+    -webkit-border-radius: 0px 0px 0px 9px;
+    outline: 0;
+
+      &:hover{
+        cursor: pointer;
+      }
+  }
+
+  &.normal-size{
+    right: 0;
+  }
+
+  &.short-size{
+    right: -$quickview-normal-width;
+  }
 }
 
 @mixin quickViewPaiting($theme, $colors) {
@@ -24,15 +50,10 @@ quick-view{
 
    		background-color: $light-primary;
   		
-  		.wrapper {
-	      background-color: $light-primary;
-	      color: $light-primary;
-
-	      a{
-	      	color: $links;
-	      }
-
-	    }
+  		.quick-view-btn{
+        color: $dark-primary;
+        background-color: $light-primary;
+      }
 
   	}
   }

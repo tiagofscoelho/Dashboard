@@ -16,5 +16,6 @@ angular
     'ngMessages',
     'ngResource',
     'ui.router',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ]);

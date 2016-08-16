@@ -7,4 +7,4 @@
 				
 			</aside>
 	<main-content
-		ng-class="dashboard.aside_opened ? 'normal-size' : 'short-size'">></main-content>
+		ng-class="(dashboard.aside_opened ? 'normal-size' : 'short-size') + ' ' + (dashboard.quickview_opened ? '' : 'full-size')"></main-content>
