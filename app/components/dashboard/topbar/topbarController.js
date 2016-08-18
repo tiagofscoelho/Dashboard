@@ -14,8 +14,6 @@ angular
 topbarController.$inject = ["$scope", "$rootScope"];
 
 function topbarController($scope, $rootScope){
-	console.log("topbarController");
-
 	$scope.toggleAside = function(){
 		$rootScope.dashboard.aside_opened ^= true;
 	}

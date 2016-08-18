@@ -28,7 +28,6 @@ aside{
 		    list-style-type: none;
 		    height: 40px;   
 		    white-space: nowrap;
-    		overflow: hidden;
 
 		    a{
 		    	padding: 10px;
@@ -55,21 +54,26 @@ aside{
 
 			    .li-arrow{	    
 			    	position: absolute;
-			    	right: 8px;
+			    	right: -4px;
 				    margin-left: 5px;   
 				    padding-top: 3px;
+
+				    .li-arrow-sm{
+				    	padding-right: 0px;
+    					margin: 4px 8px 0 0;;
+    					font-size: inherit !important;
+				    }
 			    }
 		    }
 
 		    ul {
-		    	padding-left: 10px;
+		    	padding-left: 6px;
 
 				li {
 					a{
-		    			font-size: 13px;
-
+		    			
 		    			.name{
-		    				padding-left: 26px;
+		    				font-size: 13px;
 		    			}
 		    		}
 		    	}
@@ -80,6 +84,12 @@ aside{
     .fa{
     	float: left;
     	padding-right: 13px;
+    }
+}
+
+.short-size-remove{
+    .li-arrow{
+       display: none;
     }
 }
 

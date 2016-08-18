@@ -8,10 +8,12 @@ main-content{
     bottom: 0;
     left: $aside-normal-width;
     right: 0;
-    padding-right: $quickview-normal-width;
+    padding: 10px;
+    padding-right: calc( #{$quickview-normal-width}  + 10px);
+    overflow-x: hidden;
 
     &.full-size{
-      padding-right: 0;
+      padding-right: 10px;
     }
 
     &.short-size{
@@ -34,7 +36,7 @@ main-content{
 
     main-content{
 
-        background-color: $secondary;
+        background: $secondary;
         
         .wrapper {
           background-color: $dark-primary;
