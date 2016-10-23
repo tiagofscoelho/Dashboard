@@ -16,14 +16,10 @@ asideController.$inject = ["$scope", "$state", "asideElements"];
 function asideController($scope, $state, asideElements){
 
 	$scope.aside = asideElements.data;
-
-	console.log("aside list: " , $scope.aside.list);
 	
 	$scope.elementClicked = function(index, hasSub){
 
 		var elem = $scope.aside.list[index];
-
-		console.log("ELEMENT: ",  elem);
 
 		if(hasSub !== undefined)
 		{

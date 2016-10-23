@@ -9,7 +9,7 @@ quick-view{
   -o-transition: -o-transform .3s ease-in-out,right .3s ease-in-out;
   transition: transform .3s ease-in-out,right .3s ease-in-out;
 
-  .quick-view-btn{
+  .qv-btn-wrapper{
     position: absolute;
     top: 0;
     left: -38px;
@@ -17,12 +17,34 @@ quick-view{
     border-radius: 0px 0px 0px 9px;
     -moz-border-radius: 0px 0px 0px 9px;
     -webkit-border-radius: 0px 0px 0px 9px;
-    outline: 0;
+    outline: 0; 
 
-      &:hover{
+     &:hover{
         cursor: pointer;
-      }
+      } 
+
+    .quick-view-btn{
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 2000ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-name: spin;
+      -moz-animation-duration: 2000ms;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-timing-function: linear;
+      -ms-animation-name: spin;
+      -ms-animation-duration: 2000ms;
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;
+      
+      animation-name: spin;
+      animation-duration: 2000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
   }
+
+  
 
   &.normal-size{
     right: 0;
@@ -37,12 +59,12 @@ quick-view{
 
   $dark-primary  	: 	map-get($colors, "dark-primary");
   $light-primary 	: 	map-get($colors, "light-primary");
-  $primary	 		: 	map-get($colors, "primary");
+  $primary	 		  : 	map-get($colors, "primary");
   $secondary  		: 	map-get($colors, "secondary");
-  $links 			: 	map-get($colors, "links");
+  $links 			    : 	map-get($colors, "links");
   $primary-text  	: 	map-get($colors, "primary-text");
-  $secondary-text  	: 	map-get($colors, "secondary-text");
-  $dividers  		: 	map-get($colors, "dividers");
+  $secondary-text : 	map-get($colors, "secondary-text");
+  $dividers  		  : 	map-get($colors, "dividers");
 
   .#{$theme} {
 
@@ -50,7 +72,7 @@ quick-view{
 
    		background-color: $light-primary;
   		
-  		.quick-view-btn{
+  		.qv-btn-wrapper{
         color: $dark-primary;
         background-color: $light-primary;
       }
@@ -61,4 +83,25 @@ quick-view{
 
 @each $theme, $colors in $themes-colors{
 	@include quickViewPaiting($theme, $colors);
+}
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

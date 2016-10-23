@@ -105,7 +105,6 @@ aside{
   $header-bg	: 		map-get($colors, "header-bg");
   $header-color	: 		map-get($colors, "header-color");
  
-
   .#{$theme} {
 
 	background-color: $bg;
@@ -136,17 +135,19 @@ aside{
     			li{
     				a{
 		    			border: none !important;
+		    			color: $sub-hover;
 
 			    		&:hover{
 			    			background: none !important;
+		    				color: $sub-hover;
 
 			    			.name, .fa{
-			    				color: $hover-color;
+			    				color: $sub-hover;
 			    			}
 			    		}
 
 						.name{
-		    				color: $sub-color;
+		    				color: $sub-hover;
 		    			}
 		    		}
     			}
@@ -155,6 +156,10 @@ aside{
     		.divider{
     			background-color: $header-bg;
     			color: $header-color;
+
+    			&:hover{
+    				background-color: $header-bg !important;
+    			}
     		}
     	}
     }

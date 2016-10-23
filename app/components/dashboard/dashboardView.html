@@ -2,7 +2,7 @@
 	<top-bar ng-controller="TopbarController"
 			 ng-class="dashboard.aside_opened ? 'normal-size' : 'short-size'"></top-bar>
 	<aside  ng-controller="AsideController" 
-			class="{{aside.theme}}"
+			class="{{dashboard.aside_theme}}"
 			ng-class="dashboard.aside_opened ? 'normal-size' : 'short-size'"
 			elements="aside.list">
 			</aside>

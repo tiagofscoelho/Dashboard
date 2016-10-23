@@ -11,7 +11,6 @@ angular
 .module('dashboardApp')
 .constant('asideElements' , {
 	data : {
-		theme : "aside-dark",
 		list : 
 		[
 			{
