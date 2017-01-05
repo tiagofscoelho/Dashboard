@@ -1,0 +1,53 @@
+<ul>
+	<li title="{{element.name || element.value}}" ng-repeat="element in aside.list track by $index">
+		<a class="truncate divider" ng-if="element.header">
+			<i class="fa fa-lg fa-circle-o-notch icon" aria-hidden="true"></i>  
+			<div ng-if="dashboard.aside_opened" class="name truncate">
+				{{element.value}}
+			</div>
+		</a>
+		<a class="no-select" 
+			ng-if="!element.header"
+			ng-click="elementClicked($index, element.is_opened)"
+			ng-class="{active: element.active}">
+			<i class="fa fa-lg {{element.icon}} icon" aria-hidden="true"></i> 
+			<div class="name truncate">
+				<span ng-if="dashboard.aside_opened">{{element.name}}</span>
+				<span class="li-arrow" ng-if="element.is_opened !== undefined">
+					<i class="fa fa-lg" 
+						ng-class="(element.is_opened ? 'fa-angle-up' : 'fa-angle-down') + ' ' + (!dashboard.aside_opened? 'li-arrow-sm' : '')" 
+						aria-hidden="true"></i>
+				</span>
+				<span class="tc-badge {{element.badge.type}}" 
+						ng-if="element.badge && element.badge.value > 0"
+						ng-class="!dashboard.aside_opened? 'badge-sm' : ''">
+					{{element.badge.value}}
+				</span>
+				<span class="tc-badge {{element.label.type}}" 
+						ng-if="dashboard.aside_opened && element.label && element.label.value.length > 0">
+					{{element.label.value}}
+				</span>
+			</div>
+		</a>
+		<ul class="no-select" 
+			ng-if="element.sub && element.is_opened">
+			<li ng-repeat="element in element.sub track by $index">
+				<a>
+					<i class="fa {{element.icon}}" aria-hidden="true"></i> 
+					<div class="name truncate">
+						<span ng-if="dashboard.aside_opened">{{element.name}}</span>
+						<span class="tc-badge tc-badge-sm {{element.badge.type}}" 
+								ng-if="element.badge && element.badge.value > 0"
+								ng-class="!dashboard.aside_opened? 'badge-sm' : ''">
+							{{element.badge.value}}
+						</span>
+						<span class="tc-badge tc-badge-sm {{element.label.type}}" 
+								ng-if="dashboard.aside_opened && element.label && element.label.value.length > 0">
+							{{element.label.value}}
+						</span>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>

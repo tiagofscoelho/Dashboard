@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head> 
+    <base href="/">
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="dashboardApp" ng-controller="AppController">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="tc-dashboard" ui-view ng-class="dashboard.theme"></div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+      <!-- main -->
+      <script src="components/main/app.js"></script>
+      <script src="components/main/routes.js"></script>
+      <script src="components/main/appController.js"></script>
+      <!-- end main -->
+
+      <!-- dashboard -->
+      <script src="components/dashboard/dashboardController.js"></script>
+      <!-- end dashboard -->
+
+      <!-- dashboard/aside -->
+      <script src="components/dashboard/aside/asideDirective.js"></script>
+      <script src="components/dashboard/aside/asideConfig.js"></script>
+      <script src="components/dashboard/aside/asideController.js"></script>
+      <!-- end dashboard/aside -->
+
+      <!-- dashboard/topbar -->
+      <script src="components/dashboard/topbar/topbarDirective.js"></script>
+      <script src="components/dashboard/topbar/topbarController.js"></script>
+      <!-- end dashboard/topbar -->
+
+      <!-- dashboard/maincontent -->
+      <script src="components/dashboard/maincontent/maincontentDirective.js"></script>
+      <script src="components/dashboard/maincontent/maincontentController.js"></script>
+      <!-- end dashboard/maincontent -->
+
+      <!-- dashboard/quickview -->
+      <script src="components/dashboard/quickview/quickviewDirective.js"></script>
+      <script src="components/dashboard/quickview/quickviewController.js"></script>
+      <!-- end dashboard/quickview -->
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+$aside-normal-width: 230px;
+$aside-short-width: 48px;
+$topbar-normal-height: 48px;
+$quickview-normal-width: 200px;
+
+@import "components/dashboard/aside";
+@import "components/dashboard/topbar";
+@import "components/dashboard/maincontent";
+@import "components/dashboard/quickview";
+
+#tc-dashboard-wrapper{
+	width: 100%;
+	height: 100%;
+}

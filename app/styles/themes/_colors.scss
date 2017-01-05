@@ -1,0 +1,142 @@
+$themes-colors: (
+  'purple': (
+    'dark-primary': #512DA8,
+    'light-primary': #D1C4E9,
+    'primary': #D1C4E9 ,
+    'secondary' : #F3F2F7,
+    'links' : #E040FB,
+    "primary-text" : #212121,
+    "secondary_text" : #757575,
+    "dividers" : #BDBDBD 
+  ),
+  'light-blue': (
+    'dark-primary': #1976D2,
+    'light-primary': #BBDEFB,
+    'primary': #2196F3,
+    'secondary' : #F3F2F7,
+    'links' : #03A9F4,
+    "primary-text" : #212121,
+    "secondary-text" : #757575,
+    "dividers" : #BDBDBD
+  ),
+  'dark-blue': (
+    'dark-primary': #303F9F,
+    'light-primary': #C5CAE9,
+    'primary': #3F51B5,
+    'secondary' : #F3F2F7,
+    'links' : #448AFF,
+    "primary-text" : #212121,
+    "secondary_text" : #757575,
+    "dividers" : #BDBDBD
+  ),
+  'dark-green': (
+    'dark-primary': #00796B,
+    'light-primary': #B2DFDB,
+    'primary': #009688,
+    'secondary' : #F3F2F7,
+    'links' : #4CAF50,
+    "primary-text" : #212121,
+    "secondary_text" : #757575,
+    "dividers" : #BDBDBD
+  ),
+  'light-green': (
+    'dark-primary': #689F38,
+    'light-primary': #DCEDC8,
+    'primary': #8BC34A,
+    'secondary' : #F3F2F7,
+    'links' : #CDDC39,
+    "primary-text" : #212121,
+    "secondary_text" : #757575,
+    "dividers" : #BDBDBD
+  ),
+  'orange': (
+    'dark-primary': #E64A19,
+    'light-primary': #FFCCBC,
+    'primary': #FF5722,
+    'secondary' : #F3F2F7,
+    'links' : #FF5722,
+    "primary-text" : #212121,
+    "secondary_text" : #757575,
+    "dividers" : #BDBDBD
+  ),
+  'grey': (
+    'dark-primary': #455A64,
+    'light-primary': #CFD8DC,
+    'primary': #607D8B,
+    'secondary' : #F3F2F7,
+    'links' : #9E9E9E,
+    "primary-text" : #212121,
+    "secondary_text" : #757575,
+    "dividers" : #BDBDBD
+  )
+);
+
+$aside-colors: (
+  'aside-dark': (
+    'bg': #2b3e50,
+    'color' : #B8C7CE,
+    'hover-bg' : #1E282E,
+    'hover-color' : #FFFFFF,
+    'sub-bg' : #37485B,
+    'sub-color' : #B3B3B3,
+    'sub-hover' : #FFFFFF,
+    'header-bg' : #1A2221,
+    'header-color' : #D3D3D3
+  ),
+  'aside-light': (
+    'bg': #fff,
+    'color' : #212121,
+    'hover-bg' : #1E282E,
+    'hover-color' : #FFFFFF,
+    'sub-bg' : #ededed,
+    'sub-color' : #ff0000,
+    'sub-hover' : #212121,
+    'header-bg' : #f5f5f5,
+    'header-color' : #bdbdbd
+  )
+);
+
+.tc-theme{
+  height: 20px;
+  margin: 8px 0;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  &.tc-theme-purple{
+    background-color: #512DA8;
+  }
+
+  &.tc-theme-light-blue{
+    background-color: #1976D2;
+  }
+
+  &.tc-theme-dark-blue{
+    background-color: #303F9F;
+  }
+
+  &.tc-theme-light-green{
+    background-color: #689F38;
+  }
+
+  &.tc-theme-dark-green{
+    background-color: #00796B;
+  }
+
+  &.tc-theme-orange{
+    background-color: #E64A19;
+  }
+
+  &.tc-theme-grey{
+    background-color: #455A64;
+  }
+
+  &.tc-theme-aside-dark{
+    background-color: #2b3e50;
+  }
+
+  &.tc-theme-aside-light{
+    background-color: #b3b3b3;
+  }
+}

@@ -1,0 +1,200 @@
+aside{
+	position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: $topbar-normal-height;
+    min-height: 100%;
+    width: $aside-normal-width;
+    -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
+    transition: transform .3s ease-in-out,width .3s ease-in-out;
+    z-index: 10;
+
+    &.short-size{
+    	width: $aside-short-width;
+
+    	.divider {
+    		span{
+    			display: none !important;
+    		}
+    	}
+    }
+
+    ul{
+    	list-style-type: none;
+
+    	li{
+		    list-style-type: none;
+		    height: 40px;   
+		    white-space: nowrap;
+
+		    a{
+		    	padding: 10px;
+		    	display: block;
+		    	min-height: 40px;
+
+		    	&:not(.divider):hover, &:not(.divider).active:hover{
+	    			cursor: pointer;
+	    			text-decoration: none;
+		    	}
+
+		    	&.divider:hover{
+		    		text-decoration: none;
+		    	}
+
+		    	i.icon{
+			    	float: left;
+			    	margin-top: 2px;
+			    }
+
+			    .name{
+			    	font-size: 14px;
+			    }
+
+			    .li-arrow{	    
+			    	position: absolute;
+			    	right: -4px;
+				    margin-left: 5px;   
+				    padding-top: 3px;
+
+				    .li-arrow-sm{
+				    	padding-right: 0px;
+    					margin: 4px 8px 0 0;;
+    					font-size: inherit !important;
+				    }
+			    }
+		    }
+
+		    ul {
+		    	padding-left: 6px;
+
+				li {
+					a{
+		    			
+		    			.name{
+		    				font-size: 13px;
+		    			}
+		    		}
+		    	}
+		    }
+    	}
+    }
+
+    .fa{
+    	float: left;
+    	padding-right: 13px;
+    }
+}
+
+.short-size-remove{
+    .li-arrow{
+       display: none;
+    }
+}
+
+@mixin asidePainting($theme, $colors) {
+
+  $bg  			: 		map-get($colors, "bg");
+  $color		: 		map-get($colors, "color");
+  $hover-bg		: 		map-get($colors, "hover-bg");
+  $hover-color	: 		map-get($colors, "hover-color");
+  $sub-bg		: 		map-get($colors, "sub-bg");
+  $sub-color	: 		map-get($colors, "sub-color");
+  $sub-hover	: 		map-get($colors, "sub-hover");
+  $header-bg	: 		map-get($colors, "header-bg");
+  $header-color	: 		map-get($colors, "header-color");
+ 
+  .#{$theme} {
+
+	background-color: $bg;
+		
+	ul{
+    	li{
+
+    		a{
+    			border-left: 3px solid transparent;
+
+	    		&:hover, &.active{
+	    			background-color: $hover-bg;
+	    			color: $hover-color;
+
+	    			.name, .fa{
+	    				color: $hover-color;
+	    			}
+	    		}
+
+				.name{
+    				color: $color;
+    			}
+    		}
+
+    		ul{
+    			background-color: $sub-bg;
+
+    			li{
+    				a{
+		    			border: none !important;
+		    			color: $sub-hover;
+
+			    		&:hover{
+			    			background: none !important;
+		    				color: $sub-hover;
+
+			    			.name, .fa{
+			    				color: $sub-hover;
+			    			}
+			    		}
+
+						.name{
+		    				color: $sub-hover;
+		    			}
+		    		}
+    			}
+    		}
+
+    		.divider{
+    			background-color: $header-bg;
+    			color: $header-color;
+
+    			&:hover{
+    				background-color: $header-bg !important;
+    			}
+    		}
+    	}
+    }
+
+    .fa{
+		color: $color;
+    }
+  }
+}
+
+@mixin asidePaintingThemeBased($theme, $colors) {
+
+  $dark-primary     :   map-get($colors, "dark-primary");
+  $light-primary    :   map-get($colors, "light-primary");
+  $primary          :   map-get($colors, "primary");
+  $secondary        :   map-get($colors, "secondary");
+  $links            :   map-get($colors, "links");
+  $primary-text     :   map-get($colors, "primary-text");
+  $secondary-text   :   map-get($colors, "secondary-text");
+  $dividers         :   map-get($colors, "dividers");
+
+	.#{$theme} {
+		[class*="aside-"] {
+			ul li a:not(.divider):hover, ul li a:not(.divider).active{
+		    	border-left: 3px solid $primary;
+		    }
+		  }
+	}
+ 
+}
+
+@each $theme, $colors in $aside-colors{
+	@include asidePainting($theme, $colors);
+}
+
+@each $theme, $colors in $themes-colors{
+	@include asidePaintingThemeBased($theme, $colors);
+}
